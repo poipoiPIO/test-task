@@ -1,0 +1,19 @@
+<h2> {{ menu.title }} </h2>
+
+<ul>
+  {% for c in categories %}
+    <li>
+      <a href="{% url 'category' menu.title c.id %}">
+        {{ c.title }}
+      </a>
+
+      {% if category_id == c.id %}
+        <ul>
+          {% for sub in c.subcategory_set.all %}
+            <li>{{ sub.title }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

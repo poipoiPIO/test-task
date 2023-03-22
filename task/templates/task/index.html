@@ -1,0 +1,9 @@
+{% load custom_tags %}
+
+{% if menu %}
+  {% for m in menu %}
+    {% show_menu m category_id %}
+  {%endfor%}
+{% else %}
+  <h2>There are no menues!</h2>
+{% endif %}
